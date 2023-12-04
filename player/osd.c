@@ -445,7 +445,7 @@ static void sadd_osd_status(char **buffer, struct MPContext *mpctx, int level)
             sadd_hhmmssff(buffer, get_playback_time(mpctx), fractions);
             if (level == 3) {
                 saddf(buffer, " / ");
-                sadd_hhmmssff(buffer, get_time_length(mpctx), fractions);
+                sadd_hhmmssff(buffer, get_time_length(mpctx) - get_playback_time(mpctx), fractions);
                 sadd_percentage(buffer, get_percent_pos(mpctx));
             }
         }
